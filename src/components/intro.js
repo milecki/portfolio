@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
-import Image from "../components/image"
+// import Image from "../components/image"
 import blob from "../images/blob2.svg"
 
 const StyledIntro = styled.section`
