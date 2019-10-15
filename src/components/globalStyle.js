@@ -2,15 +2,8 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
-/* @font-face {
-  font-family: "Josefin Sans";
-  src: url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap")
-} */
-/* 
-
-  
-  @import url("https://fonts.googleapis.com/css?family=Dr+Sugiyama&display=swap")
-} */
+@import url("https://fonts.googleapis.com/css?family=Dr+Sugiyama&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
 html,
 body,
@@ -97,13 +90,8 @@ html {
 body {
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.4;
-  @import url("https://fonts.googleapis.com/css?family=Dr+Sugiyama&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
-  /* background-color: ivory; */
 }
-/* 
-h1 a {
-} */
+
 
 p {
   font-family: 'Josefin Sans', sans-serif;
