@@ -5,28 +5,33 @@ import Image from "../components/image"
 import blob from "../images/blob2.svg"
 
 const StyledIntro = styled.section`
-  margin-top: 100px;
-  margin-bottom: 150px;
+  margin-top: 200px;
+  margin-bottom: 60px;
   display: flex;
 `
 
 const IntroText = styled.div`
-  /* margin-left: 40px; */
   text-align: left;
   display: inline-block;
-  width: 70%;
+  /* width: 100%; */
   z-index: 2;
 `
 
 const IntroImage = styled.div`
-  /* width: 40%; */
+  /* width: 30%; */
+
+  display: none;
 `
 
 const IntroParagraph = styled.p`
-  font-size: 44px;
-  /* text-align: justify; */
+  font-size: 32px;
+
   padding-bottom: 15px;
   line-height: 1.4;
+
+  @media screen and (min-width: 768px) {
+    font-size: 44px;
+  }
 `
 
 const Intro = () => {
@@ -43,12 +48,10 @@ const Intro = () => {
         <IntroImage>
           <div
             style={{
-              maxWidth: `300px`,
               marginTop: "-150px",
               marginLeft: "-350px",
             }}
           >
-            {/* <Image style={{ zIndex: 3 }} /> */}
             <img src={blob} alt="" />
           </div>
         </IntroImage>

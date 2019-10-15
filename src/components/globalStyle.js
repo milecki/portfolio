@@ -99,12 +99,11 @@ body {
   line-height: 1.4;
   @import url("https://fonts.googleapis.com/css?family=Dr+Sugiyama&display=swap");
   @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
-  background-color: ivory;
+  /* background-color: ivory; */
 }
-
+/* 
 h1 a {
-  font-family: "Dr Sugiyama";
-}
+} */
 
 p {
   font-family: 'Josefin Sans', sans-serif;

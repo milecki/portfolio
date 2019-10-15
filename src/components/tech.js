@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Container from "../components/container"
 import SectionTitle from "../components/sectionTitle"
 
-import { Icon, InlineIcon } from "@iconify/react"
+import { Icon } from "@iconify/react"
 import reactIcon from "@iconify/icons-logos/react"
 import gatsbyIcon from "@iconify/icons-logos/gatsby"
 import bootstrapIcon from "@iconify/icons-logos/bootstrap"
@@ -34,64 +34,74 @@ import jestIcon from "@iconify/icons-logos/jest"
 import jasmineIcon from "@iconify/icons-logos/jasmine"
 import chaiIcon from "@iconify/icons-logos/chai"
 
-const TechSection = styled.section``
+const icons = [
+  { id: 1, name: "HTML 5", src: html5, height: "" },
+  { id: 2, name: "CSS 3", src: css3, height: "" },
+  { id: 3, name: "Sass", src: sassIcon, height: "" },
+  { id: 4, name: "Bootstrap", src: bootstrapIcon, height: "" },
+  { id: 5, name: "JavaScript", src: javascriptIcon, height: "" },
+  { id: 6, name: "React.js", src: reactIcon, height: "" },
+  { id: 7, name: "Redux", src: reduxIcon, height: "" },
+  { id: 8, name: "Gatsby.js", src: gatsbyIcon, height: "" },
+  { id: 9, name: "Node.js", src: nodejsIcon, height: "" },
+  { id: 10, name: "MongoDB", src: mongodbIcon, height: 30 },
+  { id: 11, name: "Express.js", src: expressIcon, height: 30 },
+  { id: 12, name: "GraphQL", src: graphqlIcon, height: "" },
+  { id: 13, name: "Git", src: gitIcon, height: 30 },
+  { id: 14, name: "GitHub", src: githubOctocat, height: "" },
+  { id: 15, name: "JAMStack", src: jamstackIcon, height: 20 },
+  { id: 16, name: "Jekyll", src: jekyllIcon, height: 30 },
+  { id: 17, name: "Netlify", src: netlifyIcon, height: "" },
+  { id: 18, name: "Contentful", src: contentfulIcon, height: "" },
+]
 
-const TechContainer = styled.div`
-  /* display: flex; */
+const TechSection = styled.section`
+  padding-top: 180px;
+  padding-bottom: 80px;
 `
 
-const TechBox = styled.div`
+const Icons = styled.div`
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  /* margin-right: 100px; */
+`
+const IconContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  height: 120px;
+  margin: 10px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  background-color: #efefef;
+  border-radius: 4px;
+  flex-grow: 1;
 `
 
-const StyledIcon = styled(Icon)`
-  margin-right: 100px;
-  margin-bottom: 50px;
+const IconName = styled.p`
+  color: #333333;
+  font-size: 12px;
 `
 
 const Tech = () => {
   return (
     <TechSection>
       <Container>
-        <TechContainer>
-          <SectionTitle>Technologie, których używam:</SectionTitle>
-          <TechBox>
-            <StyledIcon icon={html5} height="40" />
-            <StyledIcon icon={css3} height="40" />
-            {/* <StyledIcon icon={lessIcon} height="30" /> */}
-            <StyledIcon icon={sassIcon} height="30" />
-            <StyledIcon icon={bootstrapIcon} height="40" />
-            <StyledIcon icon={javascriptIcon} height="40" />
-            <StyledIcon icon={jqueryIcon} height="20" />
-            <StyledIcon icon={reactIcon} height="40" />
-            <StyledIcon icon={reduxIcon} height="40" />
-            <StyledIcon icon={gatsbyIcon} height="40" />
-            <StyledIcon icon={nodejsIcon} height="40" />
-            <StyledIcon icon={mongodbIcon} height="40" />
-            <StyledIcon icon={expressIcon} height="30" />
-            <StyledIcon icon={graphqlIcon} height="40" />
-            {/* <StyledIcon icon={npmIcon} height="30" /> */}
-            {/* <StyledIcon icon={webpackIcon} height="40" /> */}
-            <StyledIcon icon={gitIcon} height="30" />
-            <StyledIcon icon={githubOctocat} height="40" />
-            {/* <StyledIcon icon={gulpIcon} height="40" /> */}
-            <StyledIcon icon={jamstackIcon} height="25" />
-            <StyledIcon icon={jekyllIcon} height="40" />
-            <StyledIcon icon={netlifyIcon} height="40" />
-            <StyledIcon icon={contentfulIcon} height="40" />
-            {/* <StyledIcon icon={wordpressIcon} height="40" /> */}
-            {/* <StyledIcon icon={mochaIcon} height="40" /> */}
-            {/* <StyledIcon icon={jestIcon} height="40" /> */}
-            {/* <StyledIcon icon={jasmineIcon} height="40" /> */}
-            {/* <StyledIcon icon={chaiIcon} height="40" /> */}
-            <StyledIcon icon={visualStudioCodeIcon} height="40" />
-          </TechBox>
-        </TechContainer>
+        <SectionTitle>Technologie, których używam:</SectionTitle>
+        <Icons>
+          {icons.map(icon => (
+            <IconContainer key={icon.id}>
+              <Icon icon={icon.src} height={icon.height || 40} />
+              <IconName>{icon.name}</IconName>
+            </IconContainer>
+          ))}
+        </Icons>
       </Container>
     </TechSection>
   )
