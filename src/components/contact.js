@@ -110,6 +110,7 @@ const Contact = () => {
           action="https://formspree.io/michal@kulecki.me"
           method="post"
         >
+          <input type="hidden" name="_language" value="pl" />
           <StyledLabel>
             <StyledInput
               type="text"
