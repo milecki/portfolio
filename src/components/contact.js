@@ -18,8 +18,12 @@ const StyledForm = styled.form`
 const StyledLabel = styled.label`
   margin: 20px 0;
   position: relative;
-  /* display: inline-block; */
 `
+
+const SuperLabel = styled.label`
+  display: none;
+`
+
 const StyledSpan = styled.span`
   position: absolute;
   left: 0;
@@ -81,7 +85,7 @@ const StyledTextArea = styled.textarea`
   }
 `
 
-const StyledButton = styled.button`
+const SubmitButton = styled.input`
   width: 100%;
   margin: 30px auto 0;
   padding: 15px 20px;
@@ -90,6 +94,11 @@ const StyledButton = styled.button`
   color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
+  cursor: pointer;
+
+  &:active {
+    outline: none;
+  }
 `
 
 const Contact = () => {
@@ -97,20 +106,41 @@ const Contact = () => {
     <Container>
       <StyledSection>
         <SectionTitle>Kontakt</SectionTitle>
-        <StyledForm>
+        <StyledForm
+          action="https://formspree.io/michal@kulecki.me"
+          method="post"
+        >
           <StyledLabel>
-            <StyledInput type="text" placeholder=" " />
+            <StyledInput
+              type="text"
+              name="name"
+              placeholder=" "
+              required="required"
+            />
             <StyledSpan>Imię i nazwisko</StyledSpan>
           </StyledLabel>
           <StyledLabel>
-            <StyledInput type="email" placeholder=" " />
+            <StyledInput
+              type="email"
+              name="_replyto"
+              placeholder=" "
+              required="required"
+            />
             <StyledSpan>Adres email</StyledSpan>
           </StyledLabel>
+          <SuperLabel>
+            <StyledInput type="text" name="_gotcha" placeholder=" " />
+            <StyledSpan>Dodatkowe informacje</StyledSpan>
+          </SuperLabel>
           <StyledLabel>
-            <StyledTextArea name="" id="" placeholder=" "></StyledTextArea>
+            <StyledTextArea
+              name="message"
+              placeholder=" "
+              required="required"
+            ></StyledTextArea>
             <StyledSpan>Treść wiadomości</StyledSpan>
           </StyledLabel>
-          <StyledButton type="submit">Wyślij</StyledButton>
+          <SubmitButton type="submit" value="Wyślij"></SubmitButton>
         </StyledForm>
       </StyledSection>
     </Container>
