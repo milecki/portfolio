@@ -91,6 +91,7 @@ const SubmitButton = styled.input`
   padding: 15px 20px;
   border-radius: 25px;
   background-color: #505bda;
+  border: none;
   color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
