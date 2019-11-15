@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
-import SectionTitle from "../components/sectionTitle"
+import SectionTitle from "./sectionTitle"
 
 const StyledSection = styled.section`
   padding-bottom: 50px;
