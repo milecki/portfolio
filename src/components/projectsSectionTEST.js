@@ -17,6 +17,7 @@ const projects = [
     id: 1,
     image: inception,
     name: "kulecki.me",
+    category: "React",
     desc:
       "strona na której się obecnie znajdujesz :-). Z ciekawszych rzeczy - ma moduł z internacjonalizacją (umożliwiającą wybór wersji językowej) i18n. Z kolei iframe'y ze szczegółowymi opisami projektów powstały z wykorzystaniem React Hooks ",
     tags:
@@ -29,6 +30,7 @@ const projects = [
     id: 2,
     image: legal,
     name: "Legal Informatics",
+    category: "Gatsby",
     desc:
       "Dla zaprzyjaźnionej firmy działającej na styku prawa i IT odtworzyłem projekt, który pierwotnie powstał w Pythonie, we frameworku Django i znajdował się na dość kosztowym hostingu. Lekko zmodyfikowałem jednak kilka rzeczy...",
     tags:
@@ -40,6 +42,7 @@ const projects = [
     id: 3,
     image: andrzej,
     name: "strzemzalski.eu",
+    category: "Jekyll",
     desc:
       "Mały, prosty projekt dla kumpla ;). Odtworzyłem stronę, której pierwsza wersja powstała w serwisie Foursquare. Zbudowałem ją w Jekyllu, generatorze stron statycznych zbudowanym w języku Ruby i umieściłem na bezpłatnym hostingu Github Pages",
     tags: "Jekyll, Ruby, Markdown, Pug, Github Pages, CSS Flexbox, JAMstack",
@@ -50,6 +53,7 @@ const projects = [
     id: 4,
     image: lexroom,
     name: "Lexroom.pl",
+    category: "Gatsby",
     desc:
       "Strona wciąż powstającego serwisu elearningowego z kursami video o tematyce prawniczej. Firma świadczy też usługi związane UODO",
     tags:
@@ -61,6 +65,7 @@ const projects = [
     id: 5,
     image: kancelaria,
     name: "Kancelaria Prof. Szydło i Współpracownicy",
+    category: "WordPress",
     desc:
       "Strona internetowa kancelarii prawnej. Pierwszą wersję stworzyłem w czystym WordPressie. Nowa wersja powstała w Gatsbym z WordPressem na backendzie jako Headless CMS",
     tags:
@@ -71,6 +76,7 @@ const projects = [
   {
     id: 6,
     image: rodo,
+    category: "HTML Email",
     name: "Lexroom UODO Email Template",
     desc:
       "Przykład kreacji do mailingu dla usługi UODO w firmie Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych emaili stworzony przez firmę Mailjet",
@@ -82,6 +88,36 @@ const projects = [
 
 const StyledSection = styled.section`
   padding-bottom: 80px;
+`
+
+const Categories = styled.div`
+  margin: 0 auto 50px;
+  text-align: center;
+`
+const CategoriesInstruction = styled.p`
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #55198c;
+`
+
+const CategoryButton = styled.button`
+  border-radius: 25px;
+  border: 3px solid #55198c;
+  color: #55198c;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #55198c;
+  }
 `
 
 const Projects = styled.div`
@@ -146,7 +182,13 @@ const ProjectRepo = styled.a`
 `
 
 const getCategories = items => {
-  return items
+  let tempItems = items.map(item => {
+    return item.category
+  })
+  let tempCategories = new Set(tempItems)
+  let categories = Array.from(tempCategories)
+  categories = ["all", ...categories]
+  return categories
 }
 
 class ProjectsSection extends Component {
@@ -154,18 +196,49 @@ class ProjectsSection extends Component {
     super(props)
     this.state = {
       items: projects,
+      projectItems: projects,
       categories: getCategories(projects),
     }
   }
 
+  handleItems = category => {
+    let tempItems = [...this.state.items]
+    if (category === "all") {
+      this.setState(() => {
+        return { projectItems: tempItems }
+      })
+    } else {
+      let items = tempItems.filter(project => project.category === category)
+      this.setState(() => {
+        return { projectItems: items }
+      })
+    }
+  }
+
   render() {
-    console.log(this.state.categories)
     return (
       <StyledSection>
         <Container>
           <SectionTitle>Wybrane projekty</SectionTitle>
+          <Categories>
+            <CategoriesInstruction>Wybierz kategorię:</CategoriesInstruction>
+            {this.state.categories.map((category, index) => {
+              return (
+                <CategoryButton
+                  type="button"
+                  key={index}
+                  onClick={() => {
+                    this.handleItems(category)
+                  }}
+                >
+                  {category}
+                </CategoryButton>
+              )
+            })}
+          </Categories>
+
           <Projects>
-            {this.state.items.map(project => {
+            {this.state.projectItems.map(project => {
               return (
                 <StyledProject key={project.id}>
                   <ProjectImage src={project.image} />
