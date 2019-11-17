@@ -2,25 +2,30 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
 // import Image from "../components/image"
-import blob from "../images/blob2.svg"
+// import blob from "../images/blob2.svg"
+import desk from "../images/1.3.png"
 
 const StyledIntro = styled.section`
-  margin-top: 200px;
-  margin-bottom: 60px;
+  padding-top: 100px;
+  padding-bottom: 120px;
   display: flex;
 `
 
 const IntroText = styled.div`
   text-align: left;
   display: inline-block;
-  /* width: 100%; */
   z-index: 2;
+  width: 50%;
+  margin-top: 50px;
 `
 
 const IntroImage = styled.div`
-  /* width: 30%; */
+  width: 50%;
+  padding: 0 20px;
 
-  display: none;
+  img {
+    width: 100%;
+  }
 `
 
 const IntroParagraph = styled.p`
@@ -30,7 +35,7 @@ const IntroParagraph = styled.p`
   line-height: 1.4;
 
   @media screen and (min-width: 768px) {
-    font-size: 44px;
+    font-size: 32px;
   }
 `
 
@@ -46,14 +51,7 @@ const Intro = () => {
           </IntroParagraph>
         </IntroText>
         <IntroImage>
-          <div
-            style={{
-              marginTop: "-150px",
-              marginLeft: "-350px",
-            }}
-          >
-            <img src={blob} alt="" />
-          </div>
+          <img src={desk} alt="" />
         </IntroImage>
       </StyledIntro>
     </Container>

@@ -130,7 +130,7 @@ const projects = [
 ]
 
 const StyledSection = styled.section`
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 `
 
 const Categories = styled.div`

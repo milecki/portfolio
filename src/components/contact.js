@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
 import SectionTitle from "./sectionTitle"
+import mailbox from "../images/2.1.png"
 
 const StyledSection = styled.section`
   padding-bottom: 50px;
@@ -12,7 +13,25 @@ const StyledForm = styled.form`
   flex-direction: column;
   max-width: 500px;
   font-family: "Josefin Sans", sans-serif;
-  margin: 0 auto;
+  margin: 0 auto 0;
+  width: 50%;
+  padding: 0 20px;
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* margin-top: -100px; */
+`
+
+const ContactImage = styled.div`
+  width: 50%;
+  padding: 0 100px;
+
+  img {
+    width: 100%;
+  }
 `
 
 const StyledLabel = styled.label`
@@ -45,6 +64,7 @@ const StyledInput = styled.input`
 
   &:focus {
     border-bottom: 1px solid #505bda;
+    border-bottom: 1px solid #55198c;
     outline: none;
     opacity: 1;
   }
@@ -72,6 +92,8 @@ const StyledTextArea = styled.textarea`
 
   &:focus {
     outline: none;
+    border-bottom: 1px solid #505bda;
+    border-bottom: 1px solid #55198c;
   }
 
   &:focus + ${StyledSpan} {
@@ -91,6 +113,7 @@ const SubmitButton = styled.input`
   padding: 15px 20px;
   border-radius: 25px;
   background-color: #505bda;
+  background-color: #55198c;
   border: none;
   color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
@@ -107,43 +130,48 @@ const Contact = () => {
     <Container>
       <StyledSection>
         <SectionTitle>Kontakt</SectionTitle>
-        <StyledForm
-          action="https://formspree.io/michal@kulecki.me"
-          method="post"
-        >
-          <input type="hidden" name="_language" value="pl" />
-          <StyledLabel>
-            <StyledInput
-              type="text"
-              name="name"
-              placeholder=" "
-              required="required"
-            />
-            <StyledSpan>Imię i nazwisko</StyledSpan>
-          </StyledLabel>
-          <StyledLabel>
-            <StyledInput
-              type="email"
-              name="_replyto"
-              placeholder=" "
-              required="required"
-            />
-            <StyledSpan>Adres email</StyledSpan>
-          </StyledLabel>
-          <SuperLabel>
-            <StyledInput type="text" name="_gotcha" placeholder=" " />
-            <StyledSpan>Dodatkowe informacje</StyledSpan>
-          </SuperLabel>
-          <StyledLabel>
-            <StyledTextArea
-              name="message"
-              placeholder=" "
-              required="required"
-            ></StyledTextArea>
-            <StyledSpan>Treść wiadomości</StyledSpan>
-          </StyledLabel>
-          <SubmitButton type="submit" value="Wyślij"></SubmitButton>
-        </StyledForm>
+        <Wrapper>
+          <StyledForm
+            action="https://formspree.io/michal@kulecki.me"
+            method="post"
+          >
+            <input type="hidden" name="_language" value="pl" />
+            <StyledLabel>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder=" "
+                required="required"
+              />
+              <StyledSpan>Imię i nazwisko</StyledSpan>
+            </StyledLabel>
+            <StyledLabel>
+              <StyledInput
+                type="email"
+                name="_replyto"
+                placeholder=" "
+                required="required"
+              />
+              <StyledSpan>Adres email</StyledSpan>
+            </StyledLabel>
+            <SuperLabel>
+              <StyledInput type="text" name="_gotcha" placeholder=" " />
+              <StyledSpan>Dodatkowe informacje</StyledSpan>
+            </SuperLabel>
+            <StyledLabel>
+              <StyledTextArea
+                name="message"
+                placeholder=" "
+                required="required"
+              ></StyledTextArea>
+              <StyledSpan>Treść wiadomości</StyledSpan>
+            </StyledLabel>
+            <SubmitButton type="submit" value="Wyślij"></SubmitButton>
+          </StyledForm>
+          <ContactImage>
+            <img src={mailbox} alt="" />
+          </ContactImage>
+        </Wrapper>
       </StyledSection>
     </Container>
   )

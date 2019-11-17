@@ -56,7 +56,7 @@ const icons = [
 ]
 
 const TechSection = styled.section`
-  padding-top: 180px;
+  /* padding-top: 180px; */
   padding-bottom: 80px;
 `
 
