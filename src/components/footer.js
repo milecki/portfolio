@@ -7,26 +7,27 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
   height: 80px;
-  /* background-color: #cccccc; */
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #55198c;
+  font-family: "Dr Sugiyama";
+  margin-left: 5px;
+  margin-bottom: 4px;
+  font-size: 21px;
+
+  &:hover {
+    color: red;
+  }
 `
 
 const Footer = () => (
   <StyledFooter>
     Copyright &copy; {new Date().getFullYear()} by
-    <Link to="/" style={{ textDecoration: "none" }}>
-      <span
-        style={{
-          fontFamily: "Dr Sugiyama",
-          marginLeft: "5px",
-          marginBottom: "4px",
-          fontSize: "21px",
-        }}
-      >
-        kulecki
-      </span>
-    </Link>
+    <StyledLink to="/">kulecki</StyledLink>
   </StyledFooter>
 )
 

@@ -2,37 +2,25 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
 import SectionTitle from "./sectionTitle"
-
 import { Icon } from "@iconify/react"
 import reactIcon from "@iconify/icons-logos/react"
 import gatsbyIcon from "@iconify/icons-logos/gatsby"
 import bootstrapIcon from "@iconify/icons-logos/bootstrap"
 import reduxIcon from "@iconify/icons-logos/redux"
-// import visualStudioCodeIcon from "@iconify/icons-logos/visual-studio-code"
-// import webpackIcon from "@iconify/icons-logos/webpack"
-// import wordpressIcon from "@iconify/icons-logos/wordpress-icon"
 import contentfulIcon from "@iconify/icons-logos/contentful"
 import css3 from "@iconify/icons-logos/css-3"
 import expressIcon from "@iconify/icons-logos/express"
 import gitIcon from "@iconify/icons-logos/git"
 import githubOctocat from "@iconify/icons-logos/github-octocat"
 import graphqlIcon from "@iconify/icons-logos/graphql"
-// import gulpIcon from "@iconify/icons-logos/gulp"
 import html5 from "@iconify/icons-logos/html-5"
 import jamstackIcon from "@iconify/icons-logos/jamstack"
 import javascriptIcon from "@iconify/icons-logos/javascript"
 import jekyllIcon from "@iconify/icons-logos/jekyll"
-// import jqueryIcon from "@iconify/icons-logos/jquery"
-// import lessIcon from "@iconify/icons-logos/less"
-// import mochaIcon from "@iconify/icons-logos/mocha"
 import mongodbIcon from "@iconify/icons-logos/mongodb"
 import netlifyIcon from "@iconify/icons-logos/netlify"
 import nodejsIcon from "@iconify/icons-logos/nodejs"
-// import npmIcon from "@iconify/icons-logos/npm"
 import sassIcon from "@iconify/icons-logos/sass"
-// import jestIcon from "@iconify/icons-logos/jest"
-// import jasmineIcon from "@iconify/icons-logos/jasmine"
-// import chaiIcon from "@iconify/icons-logos/chai"
 
 const icons = [
   { id: 1, name: "HTML 5", src: html5, height: "" },
@@ -56,8 +44,7 @@ const icons = [
 ]
 
 const TechSection = styled.section`
-  /* padding-top: 180px; */
-  padding-bottom: 80px;
+  padding-top: 100px;
 `
 
 const Icons = styled.div`
@@ -91,7 +78,7 @@ const IconName = styled.p`
 
 const Tech = () => {
   return (
-    <TechSection>
+    <TechSection id="tech">
       <Container>
         <SectionTitle>Technologie, których używam:</SectionTitle>
         <Icons>

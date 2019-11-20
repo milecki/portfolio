@@ -12,6 +12,7 @@ const StyledNavHeader = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: #55198c;
 
   &:hover {
     color: red;

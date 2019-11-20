@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledH2 = styled.h2`
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
   font-size: 32px;
   line-height: 1.4;

@@ -2,12 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
 // import Image from "../components/image"
-// import blob from "../images/blob2.svg"
 import desk from "../images/1.3.png"
 
 const StyledIntro = styled.section`
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 140px;
   display: flex;
 `
 

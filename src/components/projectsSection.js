@@ -130,11 +130,11 @@ const projects = [
 ]
 
 const StyledSection = styled.section`
-  padding-bottom: 40px;
+  padding-top: 100px;
 `
 
 const Categories = styled.div`
-  margin: 0 auto 50px;
+  margin: 0 auto;
   text-align: center;
 `
 const CategoriesInstruction = styled.p`
@@ -172,7 +172,7 @@ const Projects = styled.div`
 
 const StyledProject = styled.div`
   width: 340px;
-  margin: 0 10px 40px;
+  margin: 40px 10px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,7 +263,7 @@ class ProjectsSection extends Component {
 
   render() {
     return (
-      <StyledSection>
+      <StyledSection id="projects">
         <Container>
           <SectionTitle>Wybrane projekty</SectionTitle>
           <Categories>
@@ -287,7 +287,7 @@ class ProjectsSection extends Component {
             {this.state.projectItems.map(project => {
               return (
                 <StyledProject key={project.id}>
-                  <ProjectImage src={project.image} />
+                  <ProjectImage src={project.image} alt="" />
                   <ProjectText>
                     <ProjectName>{project.name}</ProjectName>
                     <ProjectTags>Tagi : {project.tags}</ProjectTags>

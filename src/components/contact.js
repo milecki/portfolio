@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../components/container"
 import SectionTitle from "./sectionTitle"
-import mailbox from "../images/2.1.png"
+import mailbox from "../images/2.2.png"
 
 const StyledSection = styled.section`
-  padding-bottom: 50px;
+  padding-bottom: 100px;
+  padding-top: 100px;
 `
 
 const StyledForm = styled.form`
@@ -15,14 +16,12 @@ const StyledForm = styled.form`
   font-family: "Josefin Sans", sans-serif;
   margin: 0 auto 0;
   width: 50%;
-  padding: 0 20px;
+  padding: 0 30px;
 `
 
 const Wrapper = styled.div`
   display: flex;
-  /* align-items: center; */
   justify-content: center;
-  /* margin-top: -100px; */
 `
 
 const ContactImage = styled.div`
@@ -63,7 +62,6 @@ const StyledInput = styled.input`
   font-size: 16px;
 
   &:focus {
-    border-bottom: 1px solid #505bda;
     border-bottom: 1px solid #55198c;
     outline: none;
     opacity: 1;
@@ -92,7 +90,6 @@ const StyledTextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-bottom: 1px solid #505bda;
     border-bottom: 1px solid #55198c;
   }
 
@@ -109,16 +106,20 @@ const StyledTextArea = styled.textarea`
 
 const SubmitButton = styled.input`
   width: 100%;
-  margin: 30px auto 0;
+  margin: 40px auto 0;
   padding: 15px 20px;
   border-radius: 25px;
-  background-color: #505bda;
   background-color: #55198c;
   border: none;
   color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
 
   &:active {
     outline: none;
@@ -128,7 +129,7 @@ const SubmitButton = styled.input`
 const Contact = () => {
   return (
     <Container>
-      <StyledSection>
+      <StyledSection id="contact">
         <SectionTitle>Kontakt</SectionTitle>
         <Wrapper>
           <StyledForm

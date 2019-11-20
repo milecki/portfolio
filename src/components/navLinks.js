@@ -20,6 +20,7 @@ const StyledLink = styled(Link)`
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   padding: 20px 0;
+  color: #55198c;
 
   &:hover {
     color: red;
@@ -35,6 +36,9 @@ class NavLinks extends Component {
   render() {
     return (
       <StyledUl ulHeight={this.props.navbarOpen ? "120px" : 0}>
+        <li>
+          <StyledLink to="/#tech">Technologie</StyledLink>
+        </li>
         <li>
           <StyledLink to="/#projects">Projekty</StyledLink>
         </li>
