@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import SectionTitle from "./sectionTitle"
 import Container from "./container"
-import inception from "../images/inception.gif"
+import inception from "../assets/inception.mp4"
 import legal from "../images/legalinformatics.png"
 import andrzej from "../images/andrzej.png"
 import lexroom from "../images/lexroom.png"
@@ -15,7 +15,7 @@ import globeIcon from "@iconify/icons-simple-line-icons/globe"
 const projects = [
   {
     id: 1,
-    image: inception,
+    video: inception,
     name: "kulecki.me",
     categories: [
       "React.js",
@@ -202,6 +202,12 @@ const ProjectImage = styled.img`
   border-top-right-radius: 0.25em;
 `
 
+const ProjectVideo = styled.video`
+  width: 100%;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+`
+
 const ProjectText = styled.div`
   margin: 1.5em 1em;
 `
@@ -302,7 +308,15 @@ class ProjectsSection extends Component {
             {this.state.projectItems.map(project => {
               return (
                 <StyledProject key={project.id}>
-                  <ProjectImage src={project.image} alt="" />
+                  {project.video ? (
+                    <ProjectVideo type="video/mp4" preload="auto" autoPlay loop>
+                      <source src={project.video}></source>
+                      Your browser does not support the video tag.
+                    </ProjectVideo>
+                  ) : (
+                    <ProjectImage src={project.image} alt="" />
+                  )}
+
                   <ProjectText>
                     <ProjectName>{project.name}</ProjectName>
                     <ProjectTags>Tagi : {project.tags}</ProjectTags>

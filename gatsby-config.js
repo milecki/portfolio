@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `kulecki`,
-    description: ``,
+    description: `Michał Kulecki, JavaScript / React / front-end developer mieszkający we Wrocławiu.`,
     author: `milecki`,
   },
   plugins: [
