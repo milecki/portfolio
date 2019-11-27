@@ -7,13 +7,14 @@ import NavHeader from "../components/navHeader"
 import NavLinks from "../components/navLinks"
 
 const StyledHeader = styled.header`
+  font-size: 1rem;
   position: fixed;
-  background-color: #ffffff;
-  border-top: 3px solid #55198c;
-  border-bottom: 3px solid #55198c;
   top: 0;
   left: 0;
   width: 100%;
+  border-top: 0.1875em solid #55198c;
+  border-bottom: 0.1875em solid #55198c;
+  background-color: #ffffff;
   z-index: 3;
 `
 

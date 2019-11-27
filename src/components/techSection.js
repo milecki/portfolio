@@ -43,17 +43,17 @@ const icons = [
   { id: 18, name: "Contentful", src: contentfulIcon, height: "" },
 ]
 
-const TechSection = styled.section`
-  padding-top: 100px;
+const Tech = styled.section`
+  font-size: 1rem;
+  padding-top: 6.875em;
+
+  @media screen and (min-width: 996px) {
+    margin-top: 2.125em;
+  }
 `
 
 const Icons = styled.div`
-  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
   flex-wrap: wrap;
 `
 const IconContainer = styled.div`
@@ -61,24 +61,24 @@ const IconContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 160px;
-  height: 120px;
-  margin: 10px;
-  padding-top: 30px;
-  padding-bottom: 25px;
-  background-color: #efefef;
-  border-radius: 4px;
   flex-grow: 1;
+  width: 10em;
+  height: 7.5em;
+  margin: 0.625em;
+  padding-top: 1.875em;
+  padding-bottom: 1.5625em;
+  border-radius: 0.25em;
+  background-color: #efefef;
 `
 
 const IconName = styled.p`
+  font-size: 0.75em;
   color: #333333;
-  font-size: 12px;
 `
 
-const Tech = () => {
+const TechSection = () => {
   return (
-    <TechSection id="tech">
+    <Tech id="tech">
       <Container>
         <SectionTitle>Technologie, których używam:</SectionTitle>
         <Icons>
@@ -90,8 +90,8 @@ const Tech = () => {
           ))}
         </Icons>
       </Container>
-    </TechSection>
+    </Tech>
   )
 }
 
-export default Tech
+export default TechSection

@@ -130,7 +130,12 @@ const projects = [
 ]
 
 const StyledSection = styled.section`
-  padding-top: 100px;
+  font-size: 1rem;
+  padding-top: 6.875em;
+
+  @media screen and (min-width: 996px) {
+    margin-top: 2.125em;
+  }
 `
 
 const Categories = styled.div`
@@ -138,28 +143,29 @@ const Categories = styled.div`
   text-align: center;
 `
 const CategoriesInstruction = styled.p`
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
   color: #55198c;
 `
 
 const CategoryButton = styled.button`
-  border-radius: 25px;
-  border: 3px solid #55198c;
+  font-size: 0.875em;
+  margin: 0.3571428571em;
+  padding: 0.7142857143em 2.1428571429em;
+  border: 0.2142857143em solid #55198c;
+  border-radius: 1.7857142857em;
+  background-color: #ffffff;
   color: #55198c;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 5px;
-  padding: 10px 30px;
   cursor: pointer;
-  transition: all 0.2s ease-in;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
   outline: none;
+  transition: all 0.2s ease-in;
 
   &:hover,
   &:focus {
-    color: #ffffff;
     background-color: #55198c;
+    color: #ffffff;
   }
 `
 
@@ -171,57 +177,66 @@ const Projects = styled.div`
 `
 
 const StyledProject = styled.div`
-  width: 340px;
-  margin: 40px 10px 0px;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 4px;
+  width: 100%;
+  max-width: 26.25em;
+  margin: 2.5em auto 0;
+  border-radius: 0.25em;
+  box-shadow: 0 1.4em 2.8em rgba(0, 0, 0, 0.25), 0 1em 1em rgba(0, 0, 0, 0.22);
 
-  box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25),
-    0 1rem 1rem rgba(0, 0, 0, 0.22);
+  @media screen and (min-width: 640px) {
+    width: 46.5%;
+    margin: 1.25em 0.6em 0;
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 31%;
+  }
 `
 const ProjectImage = styled.img`
-  width: 340px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  width: 100%;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
 `
 
 const ProjectText = styled.div`
-  margin: 30px 20px;
+  margin: 1.5em 1em;
 `
 const ProjectName = styled.h3`
+  font-size: 1.5em;
+  margin-bottom: 0.8333333333em;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 24px;
   line-height: 1.4;
-  margin-bottom: 20px;
 `
 const ProjectDescription = styled.p`
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   line-height: 1.5;
 `
 
 const ProjectTags = styled.p`
-  margin-bottom: 20px;
+  font-size: 0.875em;
+  margin-bottom: 1.4285714286em;
   line-height: 1.5;
-  font-size: 14px;
 `
 
 const ProjectAddress = styled.a`
+  font-size: 0.875em;
   display: block;
-  text-decoration: none;
-  font-family: "Josefin Sans", sans-serif;
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-bottom: 0.3571428571em;
   color: initial;
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: none;
 `
 
 const ProjectRepo = styled.a`
-  text-decoration: none;
-  font-family: "Josefin Sans", sans-serif;
-  margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 0.875em;
+  margin-bottom: 0.7142857143em;
   color: initial;
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: none;
 `
 
 const getCategories = items => {

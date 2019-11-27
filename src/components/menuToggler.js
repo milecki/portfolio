@@ -2,11 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const MenuTogglerIcon = styled.div`
-  cursor: pointer;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 58px;
+  height: 3.625em;
+  cursor: pointer;
 
   &:hover div {
     background-color: red;
@@ -18,9 +19,9 @@ const MenuTogglerIcon = styled.div`
 `
 
 const Bar = styled.div`
-  margin-bottom: 6px;
-  width: 30px;
-  height: 3px;
+  width: 1.875em;
+  height: 0.1875em;
+  margin-bottom: 0.375em;
   background-color: #55198c;
 
   &:last-child {

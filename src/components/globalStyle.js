@@ -84,8 +84,10 @@ section {
 }
 
 html {
+  font-size: 16px;
   height: 100%;
   scroll-behavior: smooth;
+
 
 }
 
@@ -101,9 +103,9 @@ p {
 }
 
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 `
 export default GlobalStyle

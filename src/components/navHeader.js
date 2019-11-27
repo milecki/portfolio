@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const StyledNavHeader = styled.div`
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,8 +12,8 @@ const StyledNavHeader = styled.div`
 `
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
   color: #55198c;
+  text-decoration: none;
 
   &:hover {
     color: red;
@@ -20,7 +21,7 @@ const StyledLink = styled(Link)`
 `
 
 const Logo = styled.h1`
-  font-size: 40px;
+  font-size: 2.5em;
   font-family: "Dr Sugiyama";
 `
 

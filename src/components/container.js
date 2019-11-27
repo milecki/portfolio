@@ -2,12 +2,13 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledContainer = styled.div`
-  margin: 0 auto;
   max-width: 1170px;
-  padding: 0 20px;
+  font-size: 1rem;
+  margin: 0 auto;
+  padding: 0 1.25em;
 
   @media screen and (min-width: 768px) {
-    padding: 0 40px;
+    padding: 0 2.5em;
   }
 `
 

@@ -1,20 +1,18 @@
 import React from "react"
-// import styled from "styled-components"
-
 import Layout from "../components/layout"
-import Intro from "../components/intro"
+import IntroSection from "../components/introSection"
 import SEO from "../components/seo"
 import ProjectsSection from "../components/projectsSection"
-import Tech from "../components/tech"
-import Contact from "../components/contact"
+import TechSection from "../components/techSection"
+import ContactSection from "../components/contactSection"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Intro />
-    <Tech />
+    <IntroSection />
+    <TechSection />
     <ProjectsSection />
-    <Contact />
+    <ContactSection />
   </Layout>
 )
 
