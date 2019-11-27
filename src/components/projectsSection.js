@@ -309,7 +309,7 @@ class ProjectsSection extends Component {
               return (
                 <StyledProject key={project.id}>
                   {project.video ? (
-                    <ProjectVideo type="video/mp4" preload="auto" autoPlay loop>
+                    <ProjectVideo type="video/mp4" autoPlay muted loop>
                       <source src={project.video}></source>
                       Your browser does not support the video tag.
                     </ProjectVideo>
