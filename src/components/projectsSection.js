@@ -189,7 +189,7 @@ const StyledProject = styled.div`
 
   @media screen and (min-width: 640px) {
     width: 46.5%;
-    margin: 1.25em 0.6em 0;
+    margin: 2em 0.6em 0;
   }
 
   @media screen and (min-width: 960px) {
