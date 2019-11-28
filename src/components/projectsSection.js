@@ -24,16 +24,14 @@ const projects = [
       "CSS Flexbox",
       "JAMstack",
       "GraphQL",
-      "i18n",
-      "React Hooks",
       "Netlify",
     ],
     desc:
-      "strona na której się obecnie znajdujesz :-). Z ciekawszych rzeczy - ma moduł z internacjonalizacją (umożliwiającą wybór wersji językowej) i18n. Z kolei iframe'y ze szczegółowymi opisami projektów powstały z wykorzystaniem React Hooks ",
+      "Strona na której obecnie się znajdujesz 😀. Zaprojektowana i zakodowana przeze mnie od A do Z, z wyjątkiem ilustracji, stworzonych przez Victora Rigo według mojej koncepcji. Strona wciąż ewoluuje. Właśnie pracuję nad modułem z internacjonalizacją, i18n (umożliwiającym wybór między polską a angielską wersją językową) oraz nad dodaniem iframe'ów ze szczegółowymi opisami wykonanych przeze mnie projektów. Planuję wykorzystać do tego React Hooks.",
     tags:
-      "React.js, React Hooks, Gatsby.js, GraphQL, Styled Components, i18n, CSS Flexbox, JAMstack, Netlify",
+      "React.js, Gatsby.js, GraphQL, Styled Components, CSS Flexbox, JAMstack, Netlify",
     adressUrl: "https://kulecki.me",
-    repoUrl: "",
+    repoUrl: "https://github.com/milecki/portfolio",
   },
 
   {
@@ -50,7 +48,7 @@ const projects = [
       "Pose",
     ],
     desc:
-      "Dla zaprzyjaźnionej firmy działającej na styku prawa i IT odtworzyłem projekt, który pierwotnie powstał w Pythonie, we frameworku Django i znajdował się na dość kosztowym hostingu. Lekko zmodyfikowałem jednak kilka rzeczy...",
+      'Dla firmy działającej na styku prawa i IT odtworzyłem we frameworku Gatsby.js stronę, która pierwotnie zakodowana była (przez innego developera) w Pythonie, we frameworku Django i znajdowała się na dość kosztowym hostingu. Do projektu wprowadziłem kilka zmian, m. in. opisy usług z osobnych podstron przeniosłem na stronę główną w postaci rozwijanych "akordeonów", zastosowałem też inny wariant logotypu, który lepiej się skaluje w wersji mobilnej menu.',
     tags:
       "React.js, Gatsby.js, GraphQL, JAMstack, Styled Components, CSS Flexbox, Pose",
     adressUrl: "https://legalinformatics.pl",
@@ -62,16 +60,14 @@ const projects = [
     name: "strzemzalski.eu",
     categories: [
       "Jekyll",
-      "Ruby",
       "Markdown",
-      "Pug",
       "GitHub Pages",
       "CSS Flexbox",
       "JAMstack",
     ],
     desc:
-      "Mały, prosty projekt dla kumpla ;). Odtworzyłem stronę, której pierwsza wersja powstała w serwisie Foursquare. Zbudowałem ją w Jekyllu, generatorze stron statycznych zbudowanym w języku Ruby i umieściłem na bezpłatnym hostingu Github Pages",
-    tags: "Jekyll, Ruby, Markdown, Pug, GitHub Pages, CSS Flexbox, JAMstack",
+      "Mały, prosty projekt dla Andrzeja, mojego szalenie utalentowanego kumpla-muzyka 👨‍🎤. Odtworzyłem prostą stronę-wizytówkę, której pierwsza wersja powstała w wizualnym kreatorze stron Squarespace, rękami samego Andrzeja. Chciałem wypróbować jakiś inny niż Gatsby, ale zachwalany przez JAMstackową społeczność generator stron statycznych. Sięgnąłem więc po klasykę i wybrałem napisany w Rubym framework Jekyll a stronę umieściłem na bezpłatnym hostingu Github Pages.",
+    tags: "Jekyll, Markdown, GitHub Pages, CSS Flexbox, JAMstack",
     adressUrl: "https://milecki.github.io/andrzej/",
     repoUrl: "https://github.com/milecki/andrzej",
   },
@@ -89,7 +85,7 @@ const projects = [
       "CSS Flexbox",
     ],
     desc:
-      "Strona wciąż powstającego serwisu elearningowego z kursami video o tematyce prawniczej. Firma świadczy też usługi związane UODO",
+      "Strona wciąż powstającego serwisu elearningowego z kursami video o tematyce prawniczej. Firma świadczy też usługi związane RODO, o czym później. Projekt UI a nawet sam logotyp są mojego autorstwa.",
     tags:
       "React.js, Gatsby.js, GraphQL, JAMstack, Sass, CSS Modules, CSS Flexbox",
     adressUrl: "https://kulecki.me",
@@ -99,22 +95,12 @@ const projects = [
     id: 5,
     image: kancelaria,
     name: "Kancelaria Prof. Szydło i Współpracownicy",
-    categories: [
-      "React.js",
-      "Gatsby.js",
-      "GraphQL",
-      "WordPress",
-      "JAMstack",
-      "Sass",
-      "CSS Modules",
-      "CSS Flexbox",
-    ],
+    categories: ["WordPress, jQuery"],
     desc:
-      "Strona internetowa kancelarii prawnej. Pierwszą wersję stworzyłem w czystym WordPressie. Nowa wersja powstała w Gatsbym z WordPressem na backendzie jako Headless CMS",
-    tags:
-      "React.js, Gatsby.js, GraphQL, WordPress, JAMstack, Sass, CSS Modules, CSS Flexbox",
+      "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. Projekt UI przygotowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS.",
+    tags: "WordPress, jQuery",
     adressUrl: "https://kancelariaszydlo.pl",
-    repoUrl: "",
+    repoUrl: "https://github.com/milecki/kancelaria",
   },
   {
     id: 6,
@@ -122,7 +108,7 @@ const projects = [
     categories: ["HTML Email", "mjml"],
     name: "Lexroom UODO Email Template",
     desc:
-      "Przykład kreacji do mailingu dla usługi UODO w firmie Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych emaili stworzony przez firmę Mailjet",
+      'Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych emaili stworzony przez firmę Mailjet. W porównaniu z "ręcznym" tworzeniem wszystkiego w tabelach, co zdarzało mi się robić  w przeszłości, była to prawdziwa przyjemność.',
     tags: "mjml, HTML Email",
     adressUrl: "https://kulecki.me",
     repoUrl: "",
