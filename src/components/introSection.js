@@ -1,8 +1,8 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Container from "../components/container"
-// import Image from "../components/image"
-import desk from "../images/1.3.png"
+import Img from "gatsby-image"
 
 const Intro = styled.section`
   font-size: 1rem;
@@ -40,6 +40,20 @@ const IntroText = styled.p`
     font-size: 2em;
   }
 `
+const Image = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      introImage: file(relativePath: { eq: "sitting-at-desk.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 515) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `)
+  return <Img fluid={data.introImage.childImageSharp.fluid} />
+}
 
 const IntroImage = styled.div`
   font-size: 1em;
@@ -68,7 +82,7 @@ const IntroSection = () => {
           Interesuje mnie web development, design, UX i technologie webowe.
         </IntroText>
         <IntroImage>
-          <img src={desk} alt="" />
+          <Image />
         </IntroImage>
       </Intro>
     </Container>
