@@ -27,7 +27,7 @@ const projects = [
       "Netlify",
     ],
     desc:
-      "Strona na której obecnie się znajdujesz 😀. Zaprojektowana i zakodowana przeze mnie od A do Z, z wyjątkiem ilustracji, stworzonych przez Victora Rigo według mojej koncepcji. Strona wciąż ewoluuje. Właśnie pracuję nad modułem z internacjonalizacją, i18n (umożliwiającym wybór między polską a angielską wersją językową) oraz nad dodaniem iframe'ów ze szczegółowymi opisami wykonanych przeze mnie projektów. Planuję wykorzystać do tego React Hooks.",
+      "Strona na której obecnie się znajdujesz 😀. Zaprojektowana i zakodowana przeze mnie od A do Z, z wyjątkiem ilustracji, stworzonych przez Victora Rigo według mojej koncepcji. Strona wciąż ewoluuje. Właśnie pracuję nad modułem z internacjonalizacją, i18n (umożliwiającym wybór między polską a angielską wersją językową) oraz nad dodaniem iframe'ów ze szczegółowymi opisami wykonanych przeze mnie projektów. Zamierzam wykorzystać do tego React Hooks.",
     tags:
       "React.js, Gatsby.js, GraphQL, Styled Components, CSS Flexbox, JAMstack, Netlify",
     adressUrl: "https://kulecki.me",
@@ -85,7 +85,7 @@ const projects = [
       "CSS Flexbox",
     ],
     desc:
-      "Strona wciąż powstającego serwisu elearningowego z kursami video o tematyce prawniczej. Firma świadczy też usługi związane RODO, o czym później. Projekt UI a nawet sam logotyp są mojego autorstwa.",
+      "Stworzona w Gatsby.js strona firmy oferującej m.in. szkolenia stacjonarne oraz (wkrótce) kursy online z dziedziny prawa. Projekt UI oraz logotyp są mojego autorstwa. Kursy video będą udostępniane za pośrednictwem platformy Teachable. Zajmowałem się jej konfiguracją, przygotowałem również widoki dla katalogu kursów, oraz pojedynczego kursu, czego efekty będzie można zobaczyć już niedługo. W tym projekcie do stylów CSS wykorzystałem CSS Modules wraz z preprocesorem Sass.",
     tags:
       "React.js, Gatsby.js, GraphQL, JAMstack, Sass, CSS Modules, CSS Flexbox",
     adressUrl: "https://kulecki.me",
@@ -97,7 +97,7 @@ const projects = [
     name: "Kancelaria Prof. Szydło i Współpracownicy",
     categories: ["WordPress, jQuery"],
     desc:
-      "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. Projekt UI przygotowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS.",
+      "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. UI zaprojektowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS.",
     tags: "WordPress, jQuery",
     adressUrl: "https://kancelariaszydlo.pl",
     repoUrl: "https://github.com/milecki/kancelaria",
@@ -108,7 +108,7 @@ const projects = [
     categories: ["HTML Email", "mjml"],
     name: "Lexroom UODO Email Template",
     desc:
-      'Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych emaili stworzony przez firmę Mailjet. W porównaniu z "ręcznym" tworzeniem wszystkiego w tabelach, co zdarzało mi się robić  w przeszłości, była to prawdziwa przyjemność.',
+      'Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych e-maili stworzony przez firmę Mailjet. W porównaniu z mozolnym, "ręcznym" tworzeniem wszystkiego w tabelach, jakby to był rok 1999 (HTML 4.01 FTW), była to prawdziwa przyjemność. W przyszłości chętnie spróbuję skorzystać z innego polecanego frameworka do tworzenia responsywnych e-maili, Foundation for Emails.',
     tags: "mjml, HTML Email",
     adressUrl: "https://kulecki.me",
     repoUrl: "",
