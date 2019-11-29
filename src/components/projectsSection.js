@@ -88,7 +88,7 @@ const projects = [
       "Stworzona w Gatsby.js strona firmy oferującej m.in. szkolenia stacjonarne oraz (wkrótce) kursy online z dziedziny prawa. Projekt UI oraz logotyp są mojego autorstwa. Kursy video będą udostępniane za pośrednictwem platformy Teachable. Zajmowałem się jej konfiguracją, przygotowałem również widoki dla katalogu kursów, oraz pojedynczego kursu, czego efekty będzie można zobaczyć już niedługo. W tym projekcie do stylów CSS wykorzystałem CSS Modules wraz z preprocesorem Sass.",
     tags:
       "React.js, Gatsby.js, GraphQL, JAMstack, Sass, CSS Modules, CSS Flexbox",
-    adressUrl: "https://kulecki.me",
+    adressUrl: "https://lexroom.pl",
     repoUrl: "https://github.com/milecki/lexroom",
   },
   {
