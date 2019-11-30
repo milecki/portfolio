@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import logo from "../images/kulecki-logo.svg"
 
 const StyledFooter = styled.footer`
   font-size: 1rem;
@@ -13,21 +14,21 @@ const StyledFooter = styled.footer`
 `
 
 const StyledLink = styled(Link)`
-  font-size: 1.3125em;
-  margin-left: 0.2380952381em;
-  margin-bottom: 0.1904761905em;
-  color: #55198c;
-  font-family: "Dr Sugiyama";
-  text-decoration: none;
-    &:hover {
-    color: red;
+  display: flex;
+  margin-left: 0.3125em;
+  margin-bottom: 0.3125em;
+
+  img {
+    width: 2.75em;
   }
 `
 
 const Footer = () => (
   <StyledFooter>
     Copyright &copy; {new Date().getFullYear()} by
-    <StyledLink to="/">kulecki</StyledLink>
+    <StyledLink to="/">
+      <img src={logo} alt="kulecki logo" />
+    </StyledLink>
   </StyledFooter>
 )
 

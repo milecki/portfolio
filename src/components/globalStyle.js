@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
-@import url("https://fonts.googleapis.com/css?family=Dr+Sugiyama&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
 html,

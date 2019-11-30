@@ -2,6 +2,7 @@ import React from "react"
 import MenuToggler from "./menuToggler"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import logo from "../images/kulecki-logo.svg"
 
 const StyledNavHeader = styled.div`
   font-size: 1rem;
@@ -12,24 +13,19 @@ const StyledNavHeader = styled.div`
 `
 
 const StyledLink = styled(Link)`
-  color: #55198c;
-  text-decoration: none;
+  display: flex;
+  height: 3.625em;
 
-  &:hover {
-    color: red;
+  img {
+    width: 5em;
   }
-`
-
-const Logo = styled.h1`
-  font-size: 2.5em;
-  font-family: "Dr Sugiyama";
 `
 
 const NavHeader = props => (
   <StyledNavHeader>
-    <Logo>
-      <StyledLink to="/">{props.siteTitle}</StyledLink>
-    </Logo>
+    <StyledLink to="/">
+      <img src={logo} alt="kulecki logo" />
+    </StyledLink>
     <MenuToggler click={props.handleNavbar} />
   </StyledNavHeader>
 )
