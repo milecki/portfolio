@@ -3,11 +3,11 @@ import styled from "styled-components"
 import SectionTitle from "./sectionTitle"
 import Container from "./container"
 import inception from "../assets/inception.mp4"
-import legal from "../images/legalinformatics.png"
-import andrzej from "../images/andrzej.png"
-import lexroom from "../images/lexroom.png"
-import rodo from "../images/rodo.png"
-import kancelaria from "../images/kancelaria.png"
+import Kancelaria from "../components/imgKancelaria"
+import Andrzej from "../components/imgAndrzej"
+import Rodo from "../components/imgRodo"
+import Lexroom from "../components/imgLexroom"
+import Legalinformatics from "../components/imgLegalinformatics"
 import { InlineIcon } from "@iconify/react"
 import githubIcon from "@iconify/icons-logos/github-icon"
 import globeIcon from "@iconify/icons-simple-line-icons/globe"
@@ -36,7 +36,7 @@ const projects = [
 
   {
     id: 2,
-    image: legal,
+    image: <Legalinformatics />,
     name: "Legal Informatics",
     categories: [
       "React.js",
@@ -56,7 +56,7 @@ const projects = [
   },
   {
     id: 3,
-    image: andrzej,
+    image: <Andrzej />,
     name: "strzemzalski.eu",
     categories: [
       "Jekyll",
@@ -73,7 +73,7 @@ const projects = [
   },
   {
     id: 4,
-    image: lexroom,
+    image: <Lexroom />,
     name: "Lexroom.pl",
     categories: [
       "React.js",
@@ -93,7 +93,7 @@ const projects = [
   },
   {
     id: 5,
-    image: kancelaria,
+    image: <Kancelaria />,
     name: "Kancelaria Prof. Szydło i Współpracownicy",
     categories: ["WordPress, jQuery"],
     desc:
@@ -104,7 +104,7 @@ const projects = [
   },
   {
     id: 6,
-    image: rodo,
+    image: <Rodo />,
     categories: ["HTML Email", "mjml"],
     name: "Lexroom UODO Email Template",
     desc:
@@ -182,10 +182,13 @@ const StyledProject = styled.div`
     width: 31%;
   }
 `
-const ProjectImage = styled.img`
+const ProjectImage = styled.div`
   width: 100%;
-  border-top-left-radius: 0.25em;
-  border-top-right-radius: 0.25em;
+
+  img {
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+  }
 `
 
 const ProjectVideo = styled.video`
@@ -300,7 +303,7 @@ class ProjectsSection extends Component {
                       Your browser does not support the video tag.
                     </ProjectVideo>
                   ) : (
-                    <ProjectImage src={project.image} alt="" />
+                    <ProjectImage>{project.image}</ProjectImage>
                   )}
 
                   <ProjectText>
