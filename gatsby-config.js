@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `kulecki`,
     description: `Michał Kulecki, JavaScript / React / front-end developer mieszkający we Wrocławiu.`,
+    siteUrl: `https://kulecki.me`,
     author: `milecki`,
   },
   plugins: [
@@ -16,6 +17,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
