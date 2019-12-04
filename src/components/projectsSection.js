@@ -99,7 +99,7 @@ const projects = [
     desc:
       "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. UI zaprojektowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS.",
     tags: "WordPress, jQuery",
-    adressUrl: "https://kancelariaszydlo.pl",
+    adressUrl: "http://kancelariaszydlo.pl",
     repoUrl: "https://github.com/milecki/kancelaria",
   },
   {
@@ -110,8 +110,8 @@ const projects = [
     desc:
       'Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych e-maili stworzony przez firmę Mailjet. W porównaniu z mozolnym, "ręcznym" tworzeniem wszystkiego w tabelach, jakby to był rok 1999 (HTML 4.01 FTW), była to prawdziwa przyjemność. W przyszłości chętnie spróbuję skorzystać z innego polecanego frameworka do tworzenia responsywnych e-maili, Foundation for Emails.',
     tags: "mjml, HTML Email",
-    adressUrl: "https://kulecki.me",
-    repoUrl: "",
+    adressUrl: "https://milecki.github.io/lexroom-rodo-email/",
+    repoUrl: "https://github.com/milecki/lexroom-rodo-email",
   },
 ]
 
@@ -271,6 +271,16 @@ class ProjectsSection extends Component {
     }
   }
 
+  processUrl = url => {
+    if (url.includes("https://")) {
+      return url.slice(8)
+    } else if (url.includes("http://")) {
+      return url.slice(7)
+    } else {
+      return url
+    }
+  }
+
   render() {
     return (
       <StyledSection id="projects">
@@ -314,11 +324,11 @@ class ProjectsSection extends Component {
                     </ProjectDescription>
                     <ProjectAddress href={project.adressUrl}>
                       <InlineIcon icon={globeIcon} height="16" /> :{" "}
-                      {project.adressUrl.slice(8)}
+                      {this.processUrl(project.adressUrl)}
                     </ProjectAddress>
                     <ProjectRepo href={project.repoUrl}>
                       <InlineIcon icon={githubIcon} height="16" /> :{" "}
-                      {project.repoUrl.slice(8)}
+                      {this.processUrl(project.repoUrl)}
                     </ProjectRepo>
                   </ProjectText>
                 </StyledProject>
