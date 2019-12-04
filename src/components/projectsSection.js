@@ -313,7 +313,7 @@ class ProjectsSection extends Component {
                       autoPlay
                       muted
                       loop
-                      playsinline
+                      playsInline
                     >
                       <source src={project.video}></source>
                       Your browser does not support the video tag.
