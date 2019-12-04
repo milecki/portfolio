@@ -49,6 +49,7 @@ const StyledInput = styled.input`
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
   color: #333;
+  appearance: none;
 
   &:focus {
     border-bottom: 0.0625em solid #55198c;
@@ -76,6 +77,7 @@ const StyledTextArea = styled.textarea`
   height: 5em;
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
+  appearance: none;
 
   &:focus {
     border-bottom: 0.0625em solid #55198c;
@@ -105,6 +107,7 @@ const SubmitButton = styled.input`
   font-family: "Josefin Sans", sans-serif;
   cursor: pointer;
   transition: all 0.2s ease-in;
+  appearance: none;
 
   &:active {
     outline: none;
