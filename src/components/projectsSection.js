@@ -343,11 +343,11 @@ class ProjectsSection extends Component {
                     <ProjectDescription>
                       Opis : {project.desc}
                     </ProjectDescription>
-                    <ProjectAddress href={project.adressUrl}>
+                    <ProjectAddress href={project.adressUrl} target="_blank">
                       <InlineIcon icon={globeIcon} height="16" /> :{" "}
                       {this.processUrl(project.adressUrl)}
                     </ProjectAddress>
-                    <ProjectRepo href={project.repoUrl}>
+                    <ProjectRepo href={project.repoUrl} target="_blank">
                       <InlineIcon icon={githubIcon} height="16" /> :{" "}
                       {this.processUrl(project.repoUrl)}
                     </ProjectRepo>
