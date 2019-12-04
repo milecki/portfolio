@@ -50,6 +50,7 @@ const StyledInput = styled.input`
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
   color: #333;
   appearance: none;
+  opacity: 1;
 
   &:focus {
     border-bottom: 0.0625em solid #55198c;
@@ -78,6 +79,7 @@ const StyledTextArea = styled.textarea`
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
   appearance: none;
+  opacity: 1;
 
   &:focus {
     border-bottom: 0.0625em solid #55198c;
