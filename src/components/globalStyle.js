@@ -86,8 +86,6 @@ html {
   font-size: 16px;
   height: 100%;
   scroll-behavior: smooth;
-
-
 }
 
 body {

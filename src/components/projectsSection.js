@@ -3,7 +3,7 @@ import styled from "styled-components"
 import SectionTitle from "./sectionTitle"
 import Container from "./container"
 import inceptionVideo from "../assets/inception.mp4"
-import InceptionImg from "../components/imgInception"
+import inceptionImage from "../images/inception.jpg"
 import Kancelaria from "../components/imgKancelaria"
 import Andrzej from "../components/imgAndrzej"
 import Rodo from "../components/imgRodo"
@@ -17,7 +17,7 @@ const projects = [
   {
     id: 1,
     video: inceptionVideo,
-    image: <InceptionImg />,
+    image: inceptionImage,
     name: "kulecki.me",
     categories: [
       "React.js",
@@ -192,11 +192,21 @@ const ProjectImage = styled.div`
     border-top-right-radius: 0.25em;
   }
 `
+const ProjectVideoWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  font-size: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+`
 
 const ProjectVideo = styled.video`
+  display: block;
   width: 100%;
-  border-top-left-radius: 0.25em;
-  border-top-right-radius: 0.25em;
+  height: auto;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 `
 
 const ProjectText = styled.div`
@@ -310,16 +320,19 @@ class ProjectsSection extends Component {
               return (
                 <StyledProject key={project.id}>
                   {project.video ? (
-                    <ProjectVideo
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      poster={project.image}
-                    >
-                      <source src={project.video} type="video/mp4"></source>
-                      Your browser does not support the video tag.
-                    </ProjectVideo>
+                    <ProjectVideoWrapper>
+                      <ProjectVideo
+                        preload="yes"
+                        muted
+                        autoPlay
+                        playsInline
+                        loop
+                        poster={project.image}
+                      >
+                        <source src={project.video} type="video/mp4"></source>
+                        Your browser does not support the video tag.
+                      </ProjectVideo>
+                    </ProjectVideoWrapper>
                   ) : (
                     <ProjectImage>{project.image}</ProjectImage>
                   )}
