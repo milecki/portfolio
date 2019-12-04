@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import SectionTitle from "./sectionTitle"
 import Container from "./container"
-import inception from "../assets/inception.mp4"
+import inceptionVideo from "../assets/inception.mp4"
+import InceptionImg from "../components/imgInception"
 import Kancelaria from "../components/imgKancelaria"
 import Andrzej from "../components/imgAndrzej"
 import Rodo from "../components/imgRodo"
@@ -15,7 +16,8 @@ import globeIcon from "@iconify/icons-simple-line-icons/globe"
 const projects = [
   {
     id: 1,
-    video: inception,
+    video: inceptionVideo,
+    image: <InceptionImg />,
     name: "kulecki.me",
     categories: [
       "React.js",
@@ -308,7 +310,13 @@ class ProjectsSection extends Component {
               return (
                 <StyledProject key={project.id}>
                   {project.video ? (
-                    <ProjectVideo autoPlay muted loop playsInline>
+                    <ProjectVideo
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={project.image}
+                    >
                       <source src={project.video} type="video/mp4"></source>
                       Your browser does not support the video tag.
                     </ProjectVideo>
