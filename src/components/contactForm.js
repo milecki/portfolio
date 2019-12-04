@@ -46,10 +46,11 @@ const StyledSpan = styled.span`
 const StyledInput = styled.input`
   font-size: 1em;
   width: 100%;
+  appearance: none;
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
+  border-radius: 0;
   color: #333;
-  appearance: none;
   opacity: 1;
 
   &:focus {
@@ -76,9 +77,10 @@ const StyledTextArea = styled.textarea`
   margin-top: 0.625em;
   width: 100%;
   height: 5em;
+  appearance: none;
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
-  appearance: none;
+  border-radius: 0;
   opacity: 1;
 
   &:focus {
