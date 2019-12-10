@@ -138,11 +138,13 @@ const CategoriesInstruction = styled.p`
 
 const CategoryButton = styled.button`
   font-size: 0.875em;
-  margin: 0.3571428571em;
-  padding: 0.7142857143em 2.1428571429em;
-  border: 0.2142857143em solid #55198c;
-  border-radius: 1.7857142857em;
+
   background-color: #ffffff;
+  border: none;
+  border-bottom: 0.1428571429em solid #55198c;
+  border-top: 0.1428571429em dotted transparent;
+  padding: 0.1428571429em 0.2142857143em;
+  margin: 0.5em;
   color: #55198c;
   cursor: pointer;
   font-family: "Josefin Sans", sans-serif;
@@ -154,6 +156,13 @@ const CategoryButton = styled.button`
   &:focus {
     background-color: #55198c;
     color: #ffffff;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin: 0.3571428571em;
+    padding: 0.7142857143em 2.1428571429em;
+    border: 0.2142857143em solid #55198c;
+    border-radius: 1.7857142857em;
   }
 `
 
