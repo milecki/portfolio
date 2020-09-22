@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `kulecki`,
-    description: `Michał Kulecki, JavaScript / React / front-end developer mieszkający we Wrocławiu.`,
+    description: `Michał Kulecki - React Front-End Developer.`,
     siteUrl: `https://kulecki.me`,
     author: `milecki`,
   },
@@ -18,6 +18,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `pl`],
+        defaultLanguage: `en`,
+        redirect: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

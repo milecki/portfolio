@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Container from "../components/container"
 import NavHeader from "../components/navHeader"
 import NavLinks from "../components/navLinks"
+import Language from "../components/language"
 
 const StyledHeader = styled.header`
   font-size: 1rem;
@@ -49,6 +50,7 @@ class Header extends Component {
               siteTitle={this.props.siteTitle}
             />
             <NavLinks navbarOpen={this.state.navbarOpen} />
+            <Language />
           </StyledNav>
         </Container>
       </StyledHeader>

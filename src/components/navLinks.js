@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { injectIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
@@ -35,20 +36,27 @@ const StyledLink = styled(Link)`
 
 class NavLinks extends Component {
   render() {
+    const { intl } = this.props
     return (
       <StyledUl ulHeight={this.props.navbarOpen ? "12.1875em" : 0}>
         <li>
-          <StyledLink to="/#tech">Technologie</StyledLink>
+          <StyledLink to="/#tech">
+            {intl.formatMessage({ id: "nav.technologies" })}
+          </StyledLink>
         </li>
         <li>
-          <StyledLink to="/#projects">Projekty</StyledLink>
+          <StyledLink to="/#projects">
+            {intl.formatMessage({ id: "nav.projects" })}
+          </StyledLink>
         </li>
         <li>
-          <StyledLink to="/#contact">Kontakt</StyledLink>
+          <StyledLink to="/#contact">
+            {intl.formatMessage({ id: "nav.contact" })}
+          </StyledLink>
         </li>
       </StyledUl>
     )
   }
 }
 
-export default NavLinks
+export default injectIntl(NavLinks)

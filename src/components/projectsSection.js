@@ -1,7 +1,11 @@
 import React, { Component } from "react"
+import { injectIntl } from "gatsby-plugin-intl"
+import { InlineIcon } from "@iconify/react"
 import styled from "styled-components"
+
 import SectionTitle from "./sectionTitle"
 import Container from "./container"
+
 import inceptionVideo from "../assets/inception.mp4"
 import inceptionImage from "../images/inception.jpg"
 import Kancelaria from "../components/imgKancelaria"
@@ -9,117 +13,13 @@ import Andrzej from "../components/imgAndrzej"
 import Rodo from "../components/imgRodo"
 import Lexroom from "../components/imgLexroom"
 import Legalinformatics from "../components/imgLegalinformatics"
-import { InlineIcon } from "@iconify/react"
 import githubIcon from "@iconify/icons-logos/github-icon"
 import globeIcon from "@iconify/icons-simple-line-icons/globe"
 
-const projects = [
-  {
-    id: 1,
-    video: inceptionVideo,
-    image: inceptionImage,
-    name: "kulecki.me",
-    categories: [
-      "React.js",
-      "Gatsby.js",
-      "Styled Components",
-      "CSS Flexbox",
-      "JAMstack",
-      "GraphQL",
-      "Netlify",
-    ],
-    desc:
-      "Strona na której obecnie się znajdujesz 😀. Zaprojektowana i zakodowana przeze mnie od A do Z, z wyjątkiem ilustracji, stworzonych przez Victora Rigo według mojej koncepcji. Strona wciąż ewoluuje. Właśnie pracuję nad modułem z internacjonalizacją, i18n (umożliwiającym wybór między polską a angielską wersją językową) oraz nad dodaniem iframe'ów ze szczegółowymi opisami wykonanych przeze mnie projektów. Zamierzam wykorzystać do tego React Hooks.",
-    tags:
-      "React.js, Gatsby.js, GraphQL, Styled Components, CSS Flexbox, JAMstack, Netlify",
-    adressUrl: "https://kulecki.me",
-    repoUrl: "https://github.com/milecki/portfolio",
-  },
-
-  {
-    id: 2,
-    image: <Legalinformatics />,
-    name: "Legal Informatics",
-    categories: [
-      "React.js",
-      "Gatsby.js",
-      "Styled Components",
-      "CSS Flexbox",
-      "JAMstack",
-      "GraphQL",
-      "Pose",
-    ],
-    desc:
-      'Dla firmy działającej na styku prawa i IT odtworzyłem we frameworku Gatsby.js stronę, która pierwotnie zakodowana była (przez innego developera) w Pythonie, we frameworku Django i znajdowała się na dość kosztowym hostingu. Do projektu wprowadziłem kilka zmian, m. in. opisy usług z osobnych podstron przeniosłem na stronę główną w postaci rozwijanych "akordeonów", zastosowałem też inny wariant logotypu, który lepiej się skaluje w wersji mobilnej menu.',
-    tags:
-      "React.js, Gatsby.js, GraphQL, JAMstack, Styled Components, CSS Flexbox, Pose",
-    adressUrl: "https://legalinformatics.pl",
-    repoUrl: "https://github.com/milecki/legalinformatics",
-  },
-  {
-    id: 3,
-    image: <Andrzej />,
-    name: "strzemzalski.eu",
-    categories: [
-      "Jekyll",
-      "Markdown",
-      "GitHub Pages",
-      "CSS Flexbox",
-      "JAMstack",
-    ],
-    desc:
-      "Mały, prosty projekt dla Andrzeja, mojego szalenie utalentowanego kumpla-muzyka 👨‍🎤. Odtworzyłem prostą stronę-wizytówkę, której pierwsza wersja powstała w wizualnym kreatorze stron Squarespace, rękami samego Andrzeja. Chciałem wypróbować jakiś inny niż Gatsby, ale zachwalany przez JAMstackową społeczność generator stron statycznych. Sięgnąłem więc po klasykę i wybrałem napisany w Rubym framework Jekyll a stronę umieściłem na bezpłatnym hostingu Github Pages.",
-    tags: "Jekyll, Markdown, GitHub Pages, CSS Flexbox, JAMstack",
-    adressUrl: "https://milecki.github.io/andrzej/",
-    repoUrl: "https://github.com/milecki/andrzej",
-  },
-  {
-    id: 4,
-    image: <Lexroom />,
-    name: "Lexroom.pl",
-    categories: [
-      "React.js",
-      "Gatsby.js",
-      "GraphQL",
-      "JAMstack",
-      "Sass",
-      "CSS Modules",
-      "CSS Flexbox",
-    ],
-    desc:
-      "Stworzona w Gatsby.js strona firmy oferującej m.in. szkolenia stacjonarne oraz (wkrótce) kursy online z dziedziny prawa. Projekt UI oraz logotyp są mojego autorstwa. Kursy video będą udostępniane za pośrednictwem platformy Teachable. Zajmowałem się jej konfiguracją, przygotowałem również widoki dla katalogu kursów, oraz pojedynczego kursu, czego efekty będzie można zobaczyć już niedługo. W tym projekcie do stylów CSS wykorzystałem CSS Modules wraz z preprocesorem Sass.",
-    tags:
-      "React.js, Gatsby.js, GraphQL, JAMstack, Sass, CSS Modules, CSS Flexbox",
-    adressUrl: "https://lexroom.pl",
-    repoUrl: "https://github.com/milecki/lexroom",
-  },
-  {
-    id: 5,
-    image: <Kancelaria />,
-    name: "Kancelaria Prof. Szydło i Współpracownicy",
-    categories: ["WordPress, jQuery"],
-    desc:
-      "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. UI zaprojektowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS.",
-    tags: "WordPress, jQuery",
-    adressUrl: "http://kancelariaszydlo.pl",
-    repoUrl: "https://github.com/milecki/kancelaria",
-  },
-  {
-    id: 6,
-    image: <Rodo />,
-    categories: ["HTML Email", "mjml"],
-    name: "Lexroom UODO Email Template",
-    desc:
-      'Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych e-maili stworzony przez firmę Mailjet. W porównaniu z mozolnym, "ręcznym" tworzeniem wszystkiego w tabelach, jakby to był rok 1999 (HTML 4.01 FTW), była to prawdziwa przyjemność. W przyszłości chętnie spróbuję skorzystać z innego polecanego frameworka do tworzenia responsywnych e-maili, Foundation for Emails.',
-    tags: "mjml, HTML Email",
-    adressUrl: "https://milecki.github.io/lexroom-rodo-email/",
-    repoUrl: "https://github.com/milecki/lexroom-rodo-email",
-  },
-]
-
 const StyledSection = styled.section`
-  font-size: 1rem;
   padding-top: 6.875em;
+  font-size: 1rem;
+  font-family: "Josefin Sans", sans-serif;
 
   @media screen and (min-width: 996px) {
     margin-top: 2.125em;
@@ -207,7 +107,7 @@ const ProjectVideoWrapper = styled.div`
   font-size: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  overflow: hidden;
+  /* overflow: hidden; */
 `
 
 const ProjectVideo = styled.video`
@@ -220,6 +120,10 @@ const ProjectVideo = styled.video`
 
 const ProjectText = styled.div`
   margin: 1.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `
 const ProjectName = styled.h3`
   font-size: 1.5em;
@@ -270,11 +174,112 @@ class ProjectsSection extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: projects,
-      projectItems: projects,
-      categories: getCategories(projects),
+      items: this.projects,
+      projectItems: this.projects,
+      categories: getCategories(this.projects),
     }
   }
+
+  intl = this.props.intl
+
+  projects = [
+    {
+      id: 1,
+      video: inceptionVideo,
+      image: inceptionImage,
+      name: "kulecki.me",
+      categories: [
+        "React.js",
+        "Gatsby.js",
+        "i18n",
+        "Styled Components",
+        "CSS Flexbox",
+        "JAMstack",
+        "GraphQL",
+        "Netlify",
+      ],
+      desc: this.intl.formatMessage({ id: "projects.kulecki.desc" }),
+      tags:
+        "React.js, Gatsby.js, GraphQL, Styled Components, CSS Flexbox, JAMstack, Netlify",
+      adressUrl: "https://kulecki.me",
+      repoUrl: "https://github.com/milecki/portfolio",
+    },
+
+    {
+      id: 2,
+      image: <Legalinformatics />,
+      name: "Legal Informatics",
+      categories: [
+        "React.js",
+        "Gatsby.js",
+        "Styled Components",
+        "CSS Flexbox",
+        "JAMstack",
+        "GraphQL",
+        "Pose",
+      ],
+      desc: this.intl.formatMessage({ id: "projects.legal.desc" }),
+      tags:
+        "React.js, Gatsby.js, GraphQL, JAMstack, Styled Components, CSS Flexbox, Pose",
+      adressUrl: "https://legalinformatics.pl",
+      repoUrl: "https://github.com/milecki/legalinformatics",
+    },
+    {
+      id: 3,
+      image: <Andrzej />,
+      name: "strzemzalski.eu",
+      categories: [
+        "Jekyll",
+        "Markdown",
+        "GitHub Pages",
+        "CSS Flexbox",
+        "JAMstack",
+      ],
+      desc: this.intl.formatMessage({ id: "projects.strzemzalski.desc" }),
+      tags: "Jekyll, Markdown, GitHub Pages, CSS Flexbox, JAMstack",
+      adressUrl: "https://milecki.github.io/andrzej/",
+      repoUrl: "https://github.com/milecki/andrzej",
+    },
+    {
+      id: 4,
+      image: <Lexroom />,
+      name: "Lexroom.pl",
+      categories: [
+        "React.js",
+        "Gatsby.js",
+        "GraphQL",
+        "JAMstack",
+        "Sass",
+        "CSS Modules",
+        "CSS Flexbox",
+      ],
+      desc: this.intl.formatMessage({ id: "projects.lexroom.desc" }),
+      tags:
+        "React.js, Gatsby.js, GraphQL, JAMstack, Sass, CSS Modules, CSS Flexbox",
+      adressUrl: "https://lexroom.pl",
+      repoUrl: "https://github.com/milecki/lexroom",
+    },
+    {
+      id: 5,
+      image: <Kancelaria />,
+      name: "Kancelaria Prof. Szydło i Współpracownicy",
+      categories: ["WordPress", "jQuery"],
+      desc: this.intl.formatMessage({ id: "projects.kancelaria.desc" }),
+      tags: "WordPress, jQuery",
+      adressUrl: "http://kancelariaszydlo.pl",
+      repoUrl: "https://github.com/milecki/kancelaria",
+    },
+    {
+      id: 6,
+      image: <Rodo />,
+      categories: ["HTML Email", "mjml"],
+      name: "Lexroom UODO Email Template",
+      desc: this.intl.formatMessage({ id: "projects.rodo.desc" }),
+      tags: "mjml, HTML Email",
+      adressUrl: "https://milecki.github.io/lexroom-rodo-email/",
+      repoUrl: "https://github.com/milecki/lexroom-rodo-email",
+    },
+  ]
 
   handleItems = category => {
     let tempItems = [...this.state.items]
@@ -306,9 +311,13 @@ class ProjectsSection extends Component {
     return (
       <StyledSection id="projects">
         <Container>
-          <SectionTitle>Wybrane projekty</SectionTitle>
+          <SectionTitle>
+            {this.intl.formatMessage({ id: "headings.projects" })}
+          </SectionTitle>
           <Categories>
-            <CategoriesInstruction>Wybierz kategorię:</CategoriesInstruction>
+            <CategoriesInstruction>
+              {this.intl.formatMessage({ id: "choose_category" })}
+            </CategoriesInstruction>
             {this.state.categories.map((category, index) => {
               return (
                 <CategoryButton
@@ -347,19 +356,26 @@ class ProjectsSection extends Component {
                   )}
 
                   <ProjectText>
-                    <ProjectName>{project.name}</ProjectName>
-                    <ProjectTags>Tagi : {project.tags}</ProjectTags>
-                    <ProjectDescription>
-                      Opis : {project.desc}
-                    </ProjectDescription>
-                    <ProjectAddress href={project.adressUrl} target="_blank">
-                      <InlineIcon icon={globeIcon} height="16" /> :{" "}
-                      {this.processUrl(project.adressUrl)}
-                    </ProjectAddress>
-                    <ProjectRepo href={project.repoUrl} target="_blank">
-                      <InlineIcon icon={githubIcon} height="16" /> :{" "}
-                      {this.processUrl(project.repoUrl)}
-                    </ProjectRepo>
+                    <div>
+                      <ProjectName>{project.name}</ProjectName>
+                      <ProjectTags>
+                        {this.intl.formatMessage({ id: "tags" })} {project.tags}
+                      </ProjectTags>
+                      <ProjectDescription>
+                        {this.intl.formatMessage({ id: "description" })}{" "}
+                        {project.desc}
+                      </ProjectDescription>
+                    </div>
+                    <div>
+                      <ProjectAddress href={project.adressUrl} target="_blank">
+                        <InlineIcon icon={globeIcon} height="16" /> :{" "}
+                        {this.processUrl(project.adressUrl)}
+                      </ProjectAddress>
+                      <ProjectRepo href={project.repoUrl} target="_blank">
+                        <InlineIcon icon={githubIcon} height="16" /> :{" "}
+                        {this.processUrl(project.repoUrl)}
+                      </ProjectRepo>
+                    </div>
                   </ProjectText>
                 </StyledProject>
               )
@@ -371,4 +387,4 @@ class ProjectsSection extends Component {
   }
 }
 
-export default ProjectsSection
+export default injectIntl(ProjectsSection)

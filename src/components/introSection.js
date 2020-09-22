@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { injectIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Container from "../components/container"
 import Img from "gatsby-image"
@@ -9,6 +10,7 @@ const Intro = styled.section`
   display: flex;
   flex-direction: column;
   padding-top: 6.25em;
+  font-family: "Josefin Sans", sans-serif;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -73,14 +75,11 @@ const IntroImage = styled.div`
   }
 `
 
-const IntroSection = () => {
+const IntroSection = ({ intl }) => {
   return (
     <Container>
       <Intro>
-        <IntroText>
-          Cześć! Nazywam się Michał i jestem front-end developerem z Wrocławia.
-          Interesuje mnie web development, design, UX i technologie webowe.
-        </IntroText>
+        <IntroText>{intl.formatMessage({ id: "intro" })}</IntroText>
         <IntroImage>
           <Image />
         </IntroImage>
@@ -89,4 +88,4 @@ const IntroSection = () => {
   )
 }
 
-export default IntroSection
+export default injectIntl(IntroSection)

@@ -1,0 +1,41 @@
+{
+  "intro": "Hi! My name is Michał and I'm a Front-End React Developer based in Wrocław, Poland. I'm interested in modern design, user-friendly UX and JAMstack.",
+  "nav": {
+    "technologies": "Technology",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "headings": {
+    "technologies": "Technology stack I use",
+    "projects": "Selected projects",
+    "contact": "Contact"
+  },
+  "choose_category": "Choose a category:",
+  "name_label": "Name",
+  "email_label": "Email",
+  "message_label": "Message",
+  "additional_info": "Additional information",
+  "send_button": "Send",
+  "description": "Description:",
+  "tags": "Tags:",
+  "projects": {
+    "kulecki": {
+      "desc": "The website you are currently on 😀. Designed and coded by me from A to Z, except for the illustrations made by Victor Rigo based on my concept. Built with Gatsby.js, a React-based framework and styled with Styled Components. It's also bilingual. I implemented i18n (internationalization) using a plugin based on react-intl. The contact form is linked to Formspree.io API, a backend email service."
+    },
+    "legal": {
+      "desc": "A company that combines law and IT needed their website, originally built with Python-based Django framework and hosted on an expensive hosting service, recreated. I rebuilt it with Gatsby and made a few changes to the project. I moved the descriptions of company's services from subpages to expandable accordions on main page. I also used a different variant of the logo, which scales better on mobile version of the menu."
+    },
+    "strzemzalski": {
+      "desc": "A small and simple project for my friend Andrzej, an extremely talented singer, songwriter and producer 👨‍🎤. I recreated his business website, originally made with Squarespace visual page creator by Andrzej himself. I wanted to try out a static page generator other than Gatsby, but also praised by the JAMstack community. So I reached for the classics and chose the Jekyll framework (written in Ruby) and put the website online for free with Github Pages hosting."
+    },
+    "lexroom": {
+      "desc": "A website created in Gatsby.js for a company offering, among other things, traditional and online courses in the field of law. I'm also the author of the logo and UI design. The video courses will be made available via Teachable platform. I was responsible for its configuration and also prepared the UI for the course catalog and the single course page. For this project I used CSS Modules with Sass preprocessor."
+    },
+    "kancelaria": {
+      "desc": "A business website for a law firm. Due to the request to add the blogging functionality, I chose the WordPress CMS for this project. I designed the UI together with Basia Rudek, who also created brand's visual identity. To create a custom theme I used the Unyson page builder plugin. I know that the site's loading time is not perfect 😉, but I'm already working on a new version of it, this time in Gatsby, with WordPress on the backend as a headless CMS."
+    },
+    "rodo": {
+      "desc": "An example of a mailing template for the Lexroom GDPR support service. For this little project I used mjml, a responsive e-mail framework created by Mailjet. It was a real pleasure, compared to the tedious way of \"manually\" coding everything in HTML tables like it's 1999 (HTML 4.01 FTW). In the future, I'd like to try some other popular responsive email frameworks, like Foundation for Emails."
+    }
+  }
+}

@@ -93,12 +93,6 @@ body {
   line-height: 1.4;
 }
 
-
-p {
-  font-family: 'Josefin Sans', sans-serif;
-
-}
-
 ul {
   margin: 0;
   padding: 0;

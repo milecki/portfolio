@@ -1,0 +1,41 @@
+{
+  "intro": "Cześć! Nazywam się Michał i jestem React front-end developerem mieszkającym we Wrocławiu. Interesuje mnie nowoczesny design, przyjazny dla użytkownika UX oraz JAMstack.",
+  "nav": {
+    "technologies": "Technologie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "headings": {
+    "technologies": "Technologie, których używam",
+    "projects": "Wybrane projekty",
+    "contact": "Kontakt"
+  },
+  "choose_category": "Wybierz kategorię:",
+  "name_label": "Imię i nazwisko",
+  "email_label": "Adres e-mail",
+  "message_label": "Treść wiadomości",
+  "additional_info": "Dodatkowe informacje",
+  "send_button": "Wyślij",
+  "description": "Opis:",
+  "tags": "Tagi:",
+  "projects": {
+    "kulecki": {
+      "desc": "Strona na której znajdujesz się obecnie 😀. Zaprojektowana i zakodowana przeze mnie od A do Z, z wyjątkiem ilustracji, stworzonych przez Victora Rigo według mojej koncepcji. Zbudowana przy użyciu superszybkiego reactowego frameworka Gatsby.js i ostylowana za pomocą Styled Components. Jest dwujęzyczna, internacjonalizację zaimplementowałem przy wykorzystaniu pluginu działającego na bazie react-intl. Formularz podpięty jest do API Formspree, backendowej usługi do obsługi poczty email."
+    },
+    "legal": {
+      "desc": "Dla firmy działającej na styku prawa i IT odtworzyłem w Gatsby.js stronę, która pierwotnie zakodowana była (przez innego developera) w Pythonie, we frameworku Django i znajdowała się na dość kosztowym hostingu. Do projektu wprowadziłem kilka zmian, m. in. opisy usług z osobnych podstron przeniosłem na stronę główną w postaci rozwijanych \"akordeonów\", zastosowałem też inny wariant logotypu, który lepiej się skaluje w wersji mobilnej menu."
+    },
+    "strzemzalski": {
+      "desc": "Mały, prosty projekt dla Andrzeja, mojego szalenie utalentowanego kumpla-muzyka 👨‍🎤. Odtworzyłem prostą stronę-wizytówkę, której pierwsza wersja powstała w wizualnym kreatorze stron Squarespace, rękami samego Andrzeja. Chciałem wypróbować jakiś generator stron statycznych inny niż Gatsby, ale równie zachwalany przez JAMstackową społeczność. Sięgnąłem więc po klasykę i wybrałem napisany w Rubym framework Jekyll a stronę umieściłem na bezpłatnym hostingu Github Pages."
+    },
+    "lexroom": {
+      "desc": "Stworzona w Gatsby.js strona firmy oferującej m.in. szkolenia stacjonarne oraz (wkrótce) kursy online z dziedziny prawa. Projekt UI oraz logotyp są mojego autorstwa. Kursy video będą udostępniane za pośrednictwem platformy Teachable. Zajmowałem się jej konfiguracją, przygotowałem również widoki dla katalogu kursów, oraz pojedynczego kursu, czego efekty będzie można zobaczyć już niedługo. W tym projekcie do stylów CSS wykorzystałem CSS Modules wraz z preprocesorem Sass."
+    },
+    "kancelaria": {
+      "desc": "Strona internetowa kancelarii prawnej. Ze względu na obecność bloga, do jej przygotowania wybrałem system CMS WordPress. UI zaprojektowałem wspólnie z Basią Rudek, która stworzyła też identyfikację wizualną kancelarii. Przy tworzeniu własnego motywu korzystałem m.in. z pluginu Unyson. Czas ładowanie strony nie jest idealny 😉, dlatego pracuję już nad nową wersją strony (link do repo tej wersji zamieszczam poniżej), w Gatsbym, z WordPressem na backendzie jako headless CMS."
+    },
+    "rodo": {
+      "desc": "Przykład kreacji do mailingu dla usługi wsparcia RODO firmy Lexroom. Do jej stworzenia wykorzystałem mjml, framework do responsywnych e-maili stworzony przez firmę Mailjet. W porównaniu z mozolnym, \"ręcznym\" tworzeniem wszystkiego w tabelach, jakby to był rok 1999 (HTML 4.01 FTW), była to prawdziwa przyjemność. W przyszłości chętnie spróbuję skorzystać z innego polecanego frameworka do tworzenia responsywnych e-maili, Foundation for Emails."
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
 const StyledForm = styled.form`
@@ -51,6 +52,7 @@ const StyledInput = styled.input`
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
   border-radius: 0;
   color: #333;
+  font-family: "Josefin Sans", sans-serif;
   opacity: 1;
 
   &:focus {
@@ -62,12 +64,12 @@ const StyledInput = styled.input`
 
   &:focus + ${StyledSpan} {
     opacity: 1;
-    transform: scale(0.875) translateY(-60%) translateX(-0.625em);
+    transform: scale(0.875) translateY(-60%) translateX(-0.5em);
   }
 
   &:not(:placeholder-shown) + ${StyledSpan} {
     opacity: 1;
-    transform: scale(0.875) translateY(-60%) translateX(-0.625em);
+    transform: scale(0.875) translateY(-60%) translateX(-0.5em);
   }
 `
 
@@ -81,6 +83,8 @@ const StyledTextArea = styled.textarea`
   border: none;
   border-bottom: 0.0625em solid rgba(51, 51, 51, 0.5);
   border-radius: 0;
+  color: #333;
+  font-family: "Josefin Sans", sans-serif;
   opacity: 1;
 
   &:focus {
@@ -90,12 +94,12 @@ const StyledTextArea = styled.textarea`
 
   &:focus + ${StyledSpan} {
     opacity: 1;
-    transform: scale(0.875) translateY(-60%) translateX(-0.625em);
+    transform: scale(0.875) translateY(-60%) translateX(-0.5em);
   }
 
   &:not(:placeholder-shown) + ${StyledSpan} {
     opacity: 1;
-    transform: scale(0.875) translateY(-60%) translateX(-0.625em);
+    transform: scale(0.875) translateY(-60%) translateX(-0.5em);
   }
 `
 
@@ -118,41 +122,47 @@ const SubmitButton = styled.input`
   }
 `
 
-const ContactForm = () => (
-  <StyledForm action="https://formspree.io/michal@kulecki.me" method="post">
-    <input type="hidden" name="_language" value="pl" />
-    <StyledLabel>
-      <StyledInput
-        type="text"
-        name="name"
-        placeholder=" "
-        required="required"
-      />
-      <StyledSpan>Imię i nazwisko</StyledSpan>
-    </StyledLabel>
-    <StyledLabel>
-      <StyledInput
-        type="email"
-        name="_replyto"
-        placeholder=" "
-        required="required"
-      />
-      <StyledSpan>Adres email</StyledSpan>
-    </StyledLabel>
-    <SuperLabel>
-      <StyledInput type="text" name="_gotcha" placeholder=" " />
-      <StyledSpan>Dodatkowe informacje</StyledSpan>
-    </SuperLabel>
-    <StyledLabel>
-      <StyledTextArea
-        name="message"
-        placeholder=" "
-        required="required"
-      ></StyledTextArea>
-      <StyledSpan>Treść wiadomości</StyledSpan>
-    </StyledLabel>
-    <SubmitButton type="submit" value="Wyślij"></SubmitButton>
-  </StyledForm>
-)
+const ContactForm = () => {
+  const intl = useIntl()
+  return (
+    <StyledForm action="https://formspree.io/michal@kulecki.me" method="post">
+      <input type="hidden" name="_language" value="pl" />
+      <StyledLabel>
+        <StyledInput
+          type="text"
+          name="name"
+          placeholder=" "
+          required="required"
+        />
+        <StyledSpan>{intl.formatMessage({ id: "name_label" })}</StyledSpan>
+      </StyledLabel>
+      <StyledLabel>
+        <StyledInput
+          type="email"
+          name="_replyto"
+          placeholder=" "
+          required="required"
+        />
+        <StyledSpan>{intl.formatMessage({ id: "email_label" })}</StyledSpan>
+      </StyledLabel>
+      <SuperLabel>
+        <StyledInput type="text" name="_gotcha" placeholder=" " />
+        <StyledSpan>{intl.formatMessage({ id: "additional_info" })}</StyledSpan>
+      </SuperLabel>
+      <StyledLabel>
+        <StyledTextArea
+          name="message"
+          placeholder=" "
+          required="required"
+        ></StyledTextArea>
+        <StyledSpan>{intl.formatMessage({ id: "name_label" })}</StyledSpan>
+      </StyledLabel>
+      <SubmitButton
+        type="submit"
+        value={intl.formatMessage({ id: "send_button" })}
+      ></SubmitButton>
+    </StyledForm>
+  )
+}
 
 export default ContactForm

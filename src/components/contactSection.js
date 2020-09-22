@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Container from "../components/container"
 import SectionTitle from "./sectionTitle"
@@ -70,10 +71,13 @@ const ContactImage = styled.div`
 `
 
 const ContactSection = () => {
+  const intl = useIntl()
   return (
     <Container>
       <StyledSection id="contact">
-        <SectionTitle>Kontakt</SectionTitle>
+        <SectionTitle>
+          {intl.formatMessage({ id: "headings.contact" })}
+        </SectionTitle>
         <Wrapper>
           <ContactForm />
           <ContactImage>
