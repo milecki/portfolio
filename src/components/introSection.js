@@ -9,7 +9,7 @@ const Intro = styled.section`
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  padding-top: 6.25em;
+  padding-top: 7.25em;
   font-family: "Josefin Sans", sans-serif;
 
   @media screen and (min-width: 768px) {
