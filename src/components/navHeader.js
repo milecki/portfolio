@@ -1,10 +1,12 @@
 import React from "react"
 import MenuToggler from "./menuToggler"
+import Language from "../components/language"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import logo from "../images/kulecki-logo.svg"
 
 const StyledNavHeader = styled.div`
+  width: 100%;
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -26,7 +28,10 @@ const NavHeader = props => (
     <StyledLink to="/">
       <img src={logo} alt="kulecki logo" />
     </StyledLink>
-    <MenuToggler click={props.handleNavbar} />
+    <div style={{display: "flex"}}>
+      <Language navbarSize="mobile" />
+      <MenuToggler click={props.handleNavbar} />
+    </div>
   </StyledNavHeader>
 )
 

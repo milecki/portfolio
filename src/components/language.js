@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 const languageName = {
@@ -6,35 +7,52 @@ const languageName = {
   pl: "PL",
 }
 
-const Language = () => {
+const LanguageBox = styled.div`
+  display: ${props => props.navbarSize === "desktop" ? "none" : "flex" };
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: ${props => props.navbarSize === "desktop" ? 0 : "20px" };
+  margin-top: ${props => props.navbarSize === "desktop" ? 0 : "5px" };
+
+  @media (min-width: 768px) {
+    display: ${props => props.navbarSize === "desktop" ? "flex" : "none" };
+  }
+`
+
+const LanguageButton = styled.div`
+  display: block;
+  padding: 3px 1px;
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  color: ${props => props.currentLocale === props.language ? "#55198c" : "rgba(0,0,0,0.3)"};
+  font-family: 'Josefin Sans';
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+`
+
+const Language = ({navbarSize}) => {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <LanguageBox navbarSize={navbarSize}>
       <IntlContextConsumer>
         {({ languages, language: currentLocale }) =>
           languages.map(language => (
-            <button
+            <LanguageButton
               key={language}
               onClick={() => changeLocale(language)}
-              style={{
-                border: `none`,
-                color:
-                  currentLocale === language ? `#55198c` : `rgba(0,0,0,0.3)`,
-                textDecoration: `none`,
-                cursor: `pointer`,
-                background: `transparent`,
-                fontFamily: `Josefin Sans`,
-                fontSize: `18px`,
-                padding: `3px 1px`,
-                marginLeft: `10px`,
-                outline: `none`,
-              }}
+              language={language}
+              currentLocale={currentLocale}
             >
               {languageName[language]}
-            </button>
+            </LanguageButton>
           ))
         }
       </IntlContextConsumer>
-    </div>
+    </LanguageBox>
   )
 }
 

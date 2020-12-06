@@ -49,8 +49,10 @@ class Header extends Component {
               handleNavbar={this.handleNavbar}
               siteTitle={this.props.siteTitle}
             />
-            <NavLinks navbarOpen={this.state.navbarOpen} />
-            <Language />
+            <div style={{display: "flex"}}>
+              <NavLinks navbarOpen={this.state.navbarOpen} />
+              <Language navbarSize="desktop" />
+            </div>
           </StyledNav>
         </Container>
       </StyledHeader>

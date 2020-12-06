@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import { injectIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
+import { injectIntl } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 
 const StyledUl = styled.ul`
